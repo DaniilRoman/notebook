@@ -16,11 +16,15 @@ class NotebookController {
     @Autowired
     lateinit var restTemplate: TestRestTemplate
 
+//    @Test
+//    fun `Assert get all notebooks, content and status code`() {
+//        val entity = restTemplate.getForEntity<String>("/api/v1/dsf")
+//        assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
+//        assertThat(entity.body).contains("[All]")
+//    }
+
     @Test
-    fun `Assert get all notebooks, content and status code`() {
-        val entity = restTemplate.getForEntity<String>("/api/v1/dsf")
-        assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(entity.body).contains("[All]")
+    fun contextLoads() {
     }
 
 }

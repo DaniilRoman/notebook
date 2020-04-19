@@ -4,6 +4,7 @@ import org.example.domain.Notebook
 import org.example.domain.request.NotebookRequest
 import org.example.repository.NotebookRepository
 import org.example.service.NotebookService
+import org.example.utils.unwrap
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
@@ -36,5 +37,3 @@ class NotebookServiceImpl: NotebookService {
     }
 
 }
-
-fun <T> Optional<T>.unwrap(): T? = orElse(null)
