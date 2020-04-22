@@ -18,6 +18,8 @@
         <postgresql.version>42.2.5</postgresql.version>
         <hibernate.version>5.4.14.Final</hibernate.version>
         <liquibase.version>3.8.9</liquibase.version>
+        <swagger.version>2.9.2</swagger.version>
+        <jsonwebtoken.version>0.8.0</jsonwebtoken.version>
     </properties>
 
     <parent>
@@ -81,6 +83,21 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- SECURITY-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jsonwebtoken.version}</version>
+        </dependency>
         <!-- LOGGING -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -101,12 +118,12 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>${swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <version>${swagger.version}</version>
         </dependency>
 
     </dependencies>

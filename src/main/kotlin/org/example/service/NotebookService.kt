@@ -7,7 +7,7 @@ import java.util.*
 interface NotebookService {
     fun getAll(): List<Notebook>
 
-    fun getById(id: UUID): Notebook?
+    fun getById(id: UUID): Notebook
 
     fun save(notebook: NotebookRequest): Notebook
 

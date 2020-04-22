@@ -1,21 +1,17 @@
 package org.example.domain
 
-import org.springframework.data.annotation.CreatedDate
-import org.springframework.data.annotation.LastModifiedDate
+import org.hibernate.annotations.CreationTimestamp
+import org.hibernate.annotations.UpdateTimestamp
 import java.util.*
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.MappedSuperclass
+import javax.persistence.*
 
 @MappedSuperclass
 open class BaseEntity(
     @Id
     @GeneratedValue(generator = "UUID")
-    val id: UUID?,
-    @CreatedDate
-    val created: Date?,
-    @LastModifiedDate
-    val updated: Date?
-) {
-    constructor(): this(null, null, null)
-}
+    val id: UUID? = null,
+    @CreationTimestamp
+    val created: Date? = null,
+    @UpdateTimestamp
+    val updated: Date? = null
+)

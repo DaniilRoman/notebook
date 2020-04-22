@@ -11,10 +11,14 @@ spring:
     password: admin
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    show-sql: true
     properties:
       hibernate:
         format_sql: true
         ddl-auto: none
   liquibase:
     change-log: classpath:liquibase/changelog.xml
+
+jwt:
+  token:
+    secret: notebookapp
+    expired: 3600000

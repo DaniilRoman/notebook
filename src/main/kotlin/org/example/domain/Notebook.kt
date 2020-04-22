@@ -7,9 +7,7 @@ import javax.persistence.*
 data class Notebook(
     @Id
     @GeneratedValue(generator = "UUID")
-    val id: UUID?,
+    val id: UUID? = null,
     val title: String,
     val text: String
-) {
-    constructor(title: String, text: String): this(null, title, text)
-}
+)

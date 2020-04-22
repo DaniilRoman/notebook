@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
 interface NotebookRepository : JpaRepository<Notebook, UUID> {
-    fun getByTitle(title: String): Notebook?
+    fun findByTitle(title: String): Notebook?
 }

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
 interface AccountRepository : JpaRepository<Account, UUID> {
-    fun getByUsername(username: String): Account?
+    fun findByUsername(username: String): Account?
 }

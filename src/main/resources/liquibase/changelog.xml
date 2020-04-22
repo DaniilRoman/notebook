@@ -10,4 +10,8 @@
     <changeSet author="danroman17397@gmail.com" id="2_create_role_and_extend_account">
         <sqlFile encoding="utf8" path="classpath:liquibase/sql/2_create_role_and_extend_account.sql"/>
     </changeSet>
+
+    <changeSet author="danroman17397@gmail.com" id="3_insert_roles">
+        <sqlFile encoding="utf8" path="classpath:liquibase/sql/3_insert_roles.sql"/>
+    </changeSet>
 </databaseChangeLog>
