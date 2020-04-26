@@ -1,15 +1,15 @@
-version: '1'
+version: '3.8'
 
 services:
   db:
-    image: db
+    build: db/
     environment:
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5432:5432"
 
   backend:
-    image: backend
+    build: backend/
     environment:
       - TOKEN_EXPIRED=3600000
     ports:
@@ -18,9 +18,7 @@ services:
       - db
 
   frontend:
-    image: frontend
-    expose:
-      - "8080"
+    build: frontend/
     ports:
       - "8080:8080"
     depends_on:
