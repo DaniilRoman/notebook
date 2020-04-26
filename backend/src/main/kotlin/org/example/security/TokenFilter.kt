@@ -1,6 +1,7 @@
 package org.example.security
 
 import org.apache.logging.log4j.LogManager
+import org.example.config.AUTHORIZATION_HEADER
 import org.example.utils.HEADER_PREFIX
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.context.SecurityContextHolder
@@ -38,7 +39,7 @@ class TokenFilter(
     }
 
     private fun getJwt(request: HttpServletRequest): String? {
-        val authHeader = request.getHeader("Authorization")
+        val authHeader = request.getHeader(AUTHORIZATION_HEADER)
 
         return if (authHeader != null && authHeader.startsWith(HEADER_PREFIX)) {
             authHeader.replace(HEADER_PREFIX, "")
