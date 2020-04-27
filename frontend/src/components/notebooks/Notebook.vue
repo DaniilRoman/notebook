@@ -1,7 +1,15 @@
 <template>
   <div class="card shadow">
-    <div>{{ notebook.title }}</div>
-    <div>{{ notebook.text }}</div>
+    <div class="content">
+      <div class="tmp_row">
+        <div class="title">{{ notebook.title }}</div>
+        <div></div>
+      </div>
+      <div class="tmp_row">
+        <div class="text">{{ notebook.text }}</div>
+        <div></div>
+      </div>
+    </div>
     <div class="row">
       <div class="row-item" v-on:click="deleteNote(notebook.id)">
         <b-icon class="delete-icon" icon="trash-fill"></b-icon>
@@ -14,7 +22,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
   name: "Notebook",
   data() {
@@ -23,10 +31,10 @@ export default {
   props: ["notebook"],
   computed: {},
   methods: {
-      ...mapActions(["deleteNote"]),
-      editNote() {
-          // TODO
-      }
+    ...mapActions(["deleteNote"]),
+    editNote() {
+      // TODO
+    }
   }
 };
 </script>
@@ -36,7 +44,6 @@ export default {
   width: 50%;
   margin: 0 auto;
   height: 10%;
-  text-align: center;
 
   border: 1px solid #c5c7c9;
   margin-bottom: 1%;
@@ -55,6 +62,21 @@ export default {
   padding-right: 5%;
 }
 .row-item {
-    margin-left: 2%;
+  margin-left: 2%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.tmp_row {
+  display: flex;
+  flex-direction: row;
+}
+.title {
+  font-size: 16pt;
+}
+.text {
+  margin-top: 1%;
+  color: #a5a7a8;
 }
 </style>
