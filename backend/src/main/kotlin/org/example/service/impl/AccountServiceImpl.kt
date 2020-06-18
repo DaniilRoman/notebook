@@ -1,7 +1,5 @@
 package org.example.service.impl
 
-import org.apache.logging.log4j.LogManager
-import org.apache.logging.log4j.Logger
 import org.example.exception.UserAlreadyExistsException
 import org.example.exception.NotFoundException
 import org.example.domain.user.Account
@@ -9,6 +7,7 @@ import org.example.domain.user.UserRole
 import org.example.repository.AccountRepository
 import org.example.repository.RoleRepository
 import org.example.service.AccountService
+import org.example.utils.LoggerDelegate
 import org.example.utils.unwrap
 import org.springframework.stereotype.Service
 import java.util.*
@@ -18,10 +17,7 @@ class AccountServiceImpl(
     private val accountRepo: AccountRepository,
     private val roleRepo: RoleRepository
 ) : AccountService {
-
-    companion object {
-        val log: Logger = LogManager.getLogger(AccountService::class.java)
-    }
+    val log by LoggerDelegate()
 
     override fun getAll(): List<Account> {
         return accountRepo.findAll().apply {

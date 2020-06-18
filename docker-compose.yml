@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   db:
-    build: db/
+    image: postgres:11.5-alpine
     environment:
       - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
 
@@ -12,11 +14,13 @@ services:
     build: backend/
     environment:
       - TOKEN_EXPIRED=3600000
+      - DB_HOST=db
+      - DB_PORT=5432
     ports:
       - "9090:9090"
     depends_on:
       - db
-
+      
   frontend:
     build: frontend/
     ports:

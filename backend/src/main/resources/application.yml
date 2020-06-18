@@ -1,12 +1,12 @@
 server:
   port: 9090
+
 spring:
-#  profiles: dev
   application:
     name: notebookservice
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/notebooks
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/notebook
     username: admin
     password: admin
   jpa:
@@ -21,4 +21,4 @@ spring:
 jwt:
   token:
     secret: notebookapp
-    expired: 3600000
+    expired: ${TOKEN_EXPIRED:3600000}

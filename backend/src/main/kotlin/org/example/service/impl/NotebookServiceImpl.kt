@@ -1,12 +1,11 @@
 package org.example.service.impl
 
-import org.apache.logging.log4j.LogManager
-import org.apache.logging.log4j.Logger
 import org.example.domain.Notebook
 import org.example.domain.request.NotebookRequest
 import org.example.exception.NotFoundException
 import org.example.repository.NotebookRepository
 import org.example.service.NotebookService
+import org.example.utils.LoggerDelegate
 import org.example.utils.unwrap
 import org.springframework.stereotype.Service
 import java.util.*
@@ -16,9 +15,7 @@ class NotebookServiceImpl(
     private val repository: NotebookRepository
 ): NotebookService {
 
-    companion object {
-        val log: Logger = LogManager.getLogger(NotebookService::class.java)
-    }
+    val log by LoggerDelegate()
 
     override fun getAll(): List<Notebook> {
         return repository.findAll().apply {

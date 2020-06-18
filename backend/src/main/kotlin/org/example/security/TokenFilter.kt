@@ -1,8 +1,8 @@
 package org.example.security
 
-import org.apache.logging.log4j.LogManager
 import org.example.config.AUTHORIZATION_HEADER
 import org.example.utils.HEADER_PREFIX
+import org.example.utils.LoggerDelegate
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.OncePerRequestFilter
@@ -14,10 +14,7 @@ class TokenFilter(
     @Autowired
     private val tokenProvider: TokenProvider
 ) : OncePerRequestFilter() {
-
-    companion object {
-        private val log = LogManager.getLogger(TokenFilter::class.java)
-    }
+    val log by LoggerDelegate()
 
     override fun doFilterInternal(
         request: HttpServletRequest,

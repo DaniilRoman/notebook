@@ -1,10 +1,9 @@
 package org.example.security
 
-import org.apache.logging.log4j.LogManager
-import org.apache.logging.log4j.Logger
 import org.example.domain.response.TokenResponse
 import org.example.domain.user.Account
 import org.example.service.AccountService
+import org.example.utils.LoggerDelegate
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -19,9 +18,7 @@ class AuthService(
     private val tokenProvider: TokenProvider,
     private val encoder: PasswordEncoder
 ) {
-    companion object {
-        val log: Logger = LogManager.getLogger(AuthService::class.java)
-    }
+    val log by LoggerDelegate()
 
     fun encode(password: String): String {
         return encoder.encode(password)
