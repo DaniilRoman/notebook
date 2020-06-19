@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: notebookservice
+  profiles:
+    active: development
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/notebook
