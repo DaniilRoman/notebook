@@ -2,17 +2,13 @@ package org.example.integration
 
 import com.opentable.db.postgres.embedded.EmbeddedPostgres
 import org.example.NotebookApplication
-import org.example.domain.Notebook
 import org.example.domain.request.AccountRequest
 import org.example.domain.response.TokenResponse
-import org.example.domain.user.Account
-import org.example.repository.AccountRepository
 import org.example.utils.HEADER_PREFIX
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.context.annotation.Bean
