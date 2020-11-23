@@ -11,6 +11,6 @@
 #
 FROM openjdk:8-jre-slim
 # COPY --from=build /home/app/target/notebook.jar /usr/local/lib/notebook.jar
-COPY./target/notebook.jar /usr/local/lib/notebook.jar
+COPY ./target/notebook.jar /usr/local/lib/notebook.jar
 EXPOSE 9090
 ENTRYPOINT ["java","-jar","/usr/local/lib/notebook.jar"]

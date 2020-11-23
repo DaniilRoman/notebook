@@ -10,7 +10,7 @@ class DynamicTest {
 
     @TestFactory
     fun `Dynamic notebook test`(): List<DynamicTest> {
-        return listOf(NotebookRequest("2", "2"),
+        return listOf(NotebookRequest("2", "3"),
                       NotebookRequest("3", "2")).map {
             dynamicTest("Check notebook $it on unnecessary information") {
                 assertFalse { it.equals() }

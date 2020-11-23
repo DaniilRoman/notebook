@@ -1,10 +1,10 @@
 package org.example.integration
 
-import junit.framework.Assert.assertEquals
 import org.example.domain.Notebook
 import org.example.domain.request.NotebookRequest
 import org.junit.Test
 import org.springframework.http.HttpMethod
+import kotlin.test.assertEquals
 
 
 class NotebookControllerTest: TestConfig() {
